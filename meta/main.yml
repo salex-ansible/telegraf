@@ -6,6 +6,6 @@ galaxy_info:
 
   min_ansible_version: 2.0
 
-  galaxy_tags: ['telegraf']
+  galaxy_tags: []
   
 dependencies: []
