@@ -20,4 +20,4 @@
     group: root
   notify:
     - restart telegraf
-  when: '{{ telegraf_config_file_path }}' is defined
+  when: telegraf_config_file_path is defined

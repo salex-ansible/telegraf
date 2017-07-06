@@ -1,38 +1,36 @@
-Role Name
+Ansible Telegraf (Influxdata) role
 =========
 
-A brief description of the role goes here.
+Simple role that installs Telegraf on your server, copies config and creates basic admin user and database.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible 2.0 and Ubuntu on the server.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Telegraf package URL:
+
+`telegraf_deb_url: https://dl.influxdata.com/telegraf/releases/telegraf_1.3.3-1_amd64.deb`
+
+This role has no configuration template. You need create custom configuration file `telegraf.conf`, after that set variable `telegraf_config_file_path`.
+That file will copy to system telegraf config path `/ect/telegraf/telegraf.conf`.
 
 Dependencies
 ------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: salex-ansible.telegraf }
 
 License
 -------
 
 BSD
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
