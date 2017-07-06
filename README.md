@@ -1,7 +1,7 @@
 Ansible Telegraf (Influxdata) role
 =========
 
-Simple role that installs Telegraf on your server, copies config and creates basic admin user and database.
+Simple role that installs Telegraf on your server and copies config.
 
 Requirements
 ------------
