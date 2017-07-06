@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Sergei Alekseenko
+  description: Ansible role for Telegraf (Inflixdata)
+  company: Teachbase
+  license: BSD
+
+  min_ansible_version: 2.0
+
+  galaxy_tags: ['telegraf']
+  
+dependencies: []

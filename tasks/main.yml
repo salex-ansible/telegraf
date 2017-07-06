@@ -1,0 +1,23 @@
+---
+- name: Download file
+  get_url:
+    url: '{{ telegraf_deb_url }}'
+    dest: ~/telegraf.deb
+    force_basic_auth: yes
+    validate_certs: no
+
+- name: Install Telegraf from deb package
+  apt:
+    deb: ~/telegraf.deb
+    state: present
+  become: yes
+
+- name: Copy telegraf.conf from custom file
+  copy:
+    src: '{{ telegraf_config_file_path }}'
+    dest: /etc/telegraf/telegraf.conf
+    owner: root
+    group: root
+  notify:
+    - restart telegraf
+  when: '{{ telegraf_config_file_path }}' is defined
